@@ -61,7 +61,7 @@ run_sql_file() {
 
 # --------------- Main -----------------------------------------
 echo "============================================="
-echo " Semgroup App – Database Seeder"
+echo " semgroup_app_db – Database Seeder"
 echo " Host : ${DB_HOST}:${DB_PORT}"
 echo " User : ${DB_USER}"
 echo "============================================="

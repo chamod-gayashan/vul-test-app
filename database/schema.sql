@@ -1,5 +1,5 @@
 -- =============================================================
--- VulnBank Sample Application – Database Schema
+-- Semgroup App – Database Schema
 -- =============================================================
 
 CREATE DATABASE IF NOT EXISTS semgroup_app_db
