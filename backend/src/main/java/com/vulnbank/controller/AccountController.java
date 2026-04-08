@@ -36,9 +36,10 @@ public class AccountController {
     @GetMapping("/search")
     public ResponseEntity<?> searchByName(@RequestParam("name") String name) {
         try (Connection connection = dataSource.getConnection()) {
-            String query = "SELECT * FROM accounts WHERE owner_name = '" + name + "'";
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
+            String query = "SELECT * FROM accounts WHERE owner_name = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, name);
+            ResultSet rs = stmt.executeQuery();
             List<Map<String, Object>> results = new ArrayList<>();
             while (rs.next()) {
                 results.add(Map.of(
